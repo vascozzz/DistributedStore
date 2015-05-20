@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using System.Data;
 
 namespace StoreService
 {
@@ -11,9 +12,6 @@ namespace StoreService
     public interface IStoreServ
     {
         [OperationContract]
-        float Add(float n1, float n2);
-
-        [OperationContract]
-        float Multiply(float n1, float n2);
+        DataTable GetBooks();
     }
 }
