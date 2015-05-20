@@ -13,5 +13,11 @@ namespace StoreService
     {
         [OperationContract]
         DataTable GetBooks();
+
+        [OperationContract]
+        int AddOrder(int bookId, int quantity, string clientName, string clientAddress, string clientEmail, int origin);
+
+        [OperationContract]
+        DataTable CheckOrder(string clientEmail, int orderId);
     }
 }
