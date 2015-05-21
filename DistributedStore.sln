@@ -1,34 +1,40 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreService", "StoreService\StoreService.csproj", "{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StoreServer", "http://localhost:43581", "{EA0F9456-BD3E-433F-B02E-A34D156863E0}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StoreServer", "http://localhost:2036", "{4510DB11-F782-404D-AF91-D2DAAA473690}"
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
-		ProjectReferences = "{2cf4cdd7-5832-4fde-ae5d-3d48e73a92a0}|StoreService.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_43581"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\Users\vascozzz\Documents\Visual Studio 2013\WebSites\StoreServer\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_43581\"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_2036"
+		Debug.AspNetCompiler.PhysicalPath = "C:\Users\Hugo\Documents\Visual Studio 2013\WebSites\StoreServer\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2036\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_43581"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\Users\vascozzz\Documents\Visual Studio 2013\WebSites\StoreServer\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_43581\"
+		Release.AspNetCompiler.VirtualPath = "/localhost_2036"
+		Release.AspNetCompiler.PhysicalPath = "C:\Users\Hugo\Documents\Visual Studio 2013\WebSites\StoreServer\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2036\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "..\..\..\Users\vascozzz\Documents\Visual Studio 2013\WebSites\StoreServer\"
+		SlnRelativePath = "C:\Users\Hugo\Documents\Visual Studio 2013\WebSites\StoreServer\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorePrinter", "StorePrinter\StorePrinter.csproj", "{4D385407-7F20-471F-B1AD-DAA0A03388DA}"
+=======
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp", "StoreApp\StoreApp.csproj", "{0F1E74B6-78AF-48D9-8F95-213F3886AF26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4510DB11-F782-404D-AF91-D2DAAA473690} = {4510DB11-F782-404D-AF91-D2DAAA473690}
+	EndProjectSection
+>>>>>>> origin/master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +55,7 @@ Global
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|ARM.ActiveCfg = Release|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|x64.ActiveCfg = Release|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|x86.ActiveCfg = Release|Any CPU
@@ -72,6 +79,16 @@ Global
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Release|ARM.ActiveCfg = Release|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Release|x64.ActiveCfg = Release|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Release|x86.ActiveCfg = Release|Any CPU
+=======
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> origin/master
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
