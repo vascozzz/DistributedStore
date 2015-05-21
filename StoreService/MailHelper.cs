@@ -15,7 +15,7 @@ namespace StoreService
     {
         private const string SMTPSERVER = "smtp.live.com";
 
-        public static void SendMail(string clientAddress, string clientName, int orderId, string date)
+        public static void SendMail(string clientEmail, string clientName, int orderId, string date)
         {
             // a new thread is created so we don't have to wait for email response
             new Thread(() =>
@@ -35,7 +35,7 @@ namespace StoreService
 
                     // add from, to mailaddresses
                     MailAddress from = new MailAddress("tdinfeup1415@outlook.com", "Distributed Store");
-                    MailAddress to = new MailAddress(clientAddress, clientName);
+                    MailAddress to = new MailAddress(clientEmail, clientName);
                     MailMessage myMail = new System.Net.Mail.MailMessage(from, to);
 
                     // set subject and encoding
@@ -48,7 +48,7 @@ namespace StoreService
                     myMail.BodyEncoding = System.Text.Encoding.UTF8;
                     myMail.IsBodyHtml = true;
 
-                    Debug.WriteLine("Sending email...");
+                    Debug.WriteLine("Sending email to " + clientEmail + " ...");
                     mySmtpClient.Send(myMail);
                     Debug.WriteLine("Email successfully sent!");
                 }

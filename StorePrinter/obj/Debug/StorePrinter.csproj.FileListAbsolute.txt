@@ -1,0 +1,6 @@
+C:\Programming\C#\DistributedStore\StorePrinter\bin\Debug\StorePrinter.exe.config
+C:\Programming\C#\DistributedStore\StorePrinter\bin\Debug\StorePrinter.exe
+C:\Programming\C#\DistributedStore\StorePrinter\bin\Debug\StorePrinter.pdb
+C:\Programming\C#\DistributedStore\StorePrinter\obj\Debug\StorePrinter.exe
+C:\Programming\C#\DistributedStore\StorePrinter\obj\Debug\StorePrinter.pdb
+C:\Programming\C#\DistributedStore\StorePrinter\obj\Debug\StorePrinter.csprojResolveAssemblyReference.cache

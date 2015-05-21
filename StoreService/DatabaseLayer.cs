@@ -14,7 +14,7 @@ namespace StoreService
     {
         private const string DBNAME = "StoreDatabase";
 
-        public static DataRow GetBook(int bookId)
+        public static DataTable GetBook(int bookId)
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
             DataTable books = new DataTable("Books");
@@ -40,7 +40,7 @@ namespace StoreService
                 db.Close();
             }
 
-            return books.Rows[0];
+            return books;
         }
 
 

@@ -17,7 +17,17 @@ namespace StoreService
 
         public int AddOrder(int bookId, int quantity, string clientName, string clientAddress, string clientEmail, int origin)
         {
-            DataRow book = DatabaseLayer.GetBook(bookId);
+            // get desired book
+            DataTable books = DatabaseLayer.GetBook(bookId);
+
+            // if not found, return new order Id as -1
+            if (books.Rows.Count < 1)
+            {
+                return -1;
+            }
+
+            // otherwise, proceed by checking if book has enough stock
+            DataRow book = books.Rows[0];
             int available = (int)book["quantity"];
             double price = (double)book["price"];
             float totalPrice = (float)(quantity * price);
@@ -38,11 +48,14 @@ namespace StoreService
                 DatabaseLayer.UpdateBookQuantity(bookId, newQuantity);
             }
 
-            // order must be completed later, state = 1
+            // order must be completed later, state = 1, ask warehouse for more
             else
             {
                 stateCode = 1;
                 state = "waiting expedition";
+
+                // request from warehouse
+                // DatabaseLayer.AddRequest();
             }
 
             // register order
@@ -50,7 +63,7 @@ namespace StoreService
 
             // send email if needed
             if (origin == 1 && stateCode == 3) {
-                MailHelper.SendMail(clientEmail, clientName, orderId, date.ToString("d-M-yyyy"));
+                // MailHelper.SendMail(clientEmail, clientName, orderId, date.ToString("d-M-yyyy"));
             }
             
             // or issue receipt if origin = store
@@ -59,7 +72,7 @@ namespace StoreService
 
             }
 
-            return 1;
+            return orderId;
         }
 
         public DataTable CheckOrder(string clientEmail, int orderId)
