@@ -1,0 +1,12 @@
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\bin\Debug\StoreApp.exe.config
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\bin\Debug\StoreApp.exe
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\bin\Debug\StoreApp.pdb
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\bin\Debug\MetroFramework.Design.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\bin\Debug\MetroFramework.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\bin\Debug\MetroFramework.Fonts.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.csprojResolveAssemblyReference.cache
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.Form1.resources
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.Properties.Resources.resources
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.csproj.GenerateResource.Cache
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.exe
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.pdb
