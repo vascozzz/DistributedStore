@@ -9,6 +9,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StoreServer", "http://local
 	ProjectSection(WebsiteProperties) = preProject
 		UseIISExpress = "true"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{2cf4cdd7-5832-4fde-ae5d-3d48e73a92a0}|StoreService.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_2036"
 		Debug.AspNetCompiler.PhysicalPath = "C:\Users\Hugo\Documents\Visual Studio 2013\WebSites\StoreServer\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_2036\"
@@ -27,14 +28,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "StoreServer", "http://local
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorePrinter", "StorePrinter\StorePrinter.csproj", "{4D385407-7F20-471F-B1AD-DAA0A03388DA}"
-=======
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp", "StoreApp\StoreApp.csproj", "{0F1E74B6-78AF-48D9-8F95-213F3886AF26}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4510DB11-F782-404D-AF91-D2DAAA473690} = {4510DB11-F782-404D-AF91-D2DAAA473690}
 	EndProjectSection
->>>>>>> origin/master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,20 +54,19 @@ Global
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|ARM.ActiveCfg = Release|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|x64.ActiveCfg = Release|Any CPU
 		{2CF4CDD7-5832-4FDE-AE5D-3D48E73A92A0}.Release|x86.ActiveCfg = Release|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Release|ARM.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Release|x64.ActiveCfg = Debug|Any CPU
-		{EA0F9456-BD3E-433F-B02E-A34D156863E0}.Release|x86.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|ARM.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|x64.ActiveCfg = Debug|Any CPU
+		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|x86.ActiveCfg = Debug|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -79,16 +77,16 @@ Global
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Release|ARM.ActiveCfg = Release|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Release|x64.ActiveCfg = Release|Any CPU
 		{4D385407-7F20-471F-B1AD-DAA0A03388DA}.Release|x86.ActiveCfg = Release|Any CPU
-=======
-		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4510DB11-F782-404D-AF91-D2DAAA473690}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{4510DB11-F782-404D-AF91-D2DAAA473690}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> origin/master
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|x64.ActiveCfg = Release|Any CPU
+		{0F1E74B6-78AF-48D9-8F95-213F3886AF26}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

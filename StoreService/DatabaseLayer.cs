@@ -14,6 +14,11 @@ namespace StoreService
     {
         private const string DBNAME = "StoreDatabase";
 
+        ///////////
+        // Books //
+        ///////////
+
+        //Fetches a book by its id
         public static DataTable GetBook(int bookId)
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
@@ -43,7 +48,7 @@ namespace StoreService
             return books;
         }
 
-
+        //Adds a new book
         public static bool AddBook(string title, int quantity, float price)
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
@@ -62,9 +67,9 @@ namespace StoreService
 
                 command.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                throw e;
+                return false;
             }
             finally
             {
@@ -74,6 +79,7 @@ namespace StoreService
             return true;
         }
 
+        //Fetches all books
         public static DataTable GetBooks()
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
@@ -101,6 +107,7 @@ namespace StoreService
             return books;
         }
 
+        //Updates book quantity to a new given quantity
         public static bool UpdateBookQuantity(int bookId, int newQuantity)
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
@@ -115,9 +122,9 @@ namespace StoreService
                 command.Parameters.AddWithValue("@bookId", bookId);
                 command.ExecuteNonQuery();
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                throw e;
+                return false;
             }
             finally
             {
@@ -127,6 +134,38 @@ namespace StoreService
             return true;
         }
 
+        //Increments book quantity by a given quantity
+        public static bool AddBookQuantity(int bookId, int quantity)
+        {
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
+
+            try
+            {
+                db.Open();
+
+                string sql = "UPDATE Book SET quantity = quantity + @quantity WHERE id = @bookId";
+                SqlCommand command = new SqlCommand(sql, db);
+                command.Parameters.AddWithValue("@quantity", quantity);
+                command.Parameters.AddWithValue("@bookId", bookId);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return true;
+        }
+
+        ////////////
+        // Orders //
+        ////////////
+
+        //Adds a new Order
         public static int AddOrder(int bookId, int quantity, float totalPrice, string clientName, string clientAddress, string clientEmail, string state, int stateCode, int origin)
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
@@ -166,6 +205,7 @@ namespace StoreService
             return newId;
         }
 
+        //Fetches an Order by id and client email (for validation purposes)
         public static DataTable CheckOrder(string clientEmail, int orderId)
         {
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
@@ -194,6 +234,91 @@ namespace StoreService
             }
 
             return orders;
+        }
+
+        //////////////
+        // Requests //
+        //////////////
+
+        //Fetches all book requests
+        public static DataTable GetRequests()
+        {
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
+            DataTable requests = new DataTable("Requests");
+
+            try
+            {
+                db.Open();
+
+                string sql = "SELECT * FROM BookRequest";
+
+                SqlCommand command = new SqlCommand(sql, db);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(requests);
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return requests;
+        }
+
+        //Sets field "fulfilled" of this request to 1 (true).
+        // fulfilled -> 0 = false, 1 = true
+        public static bool UpdateRequest(int requestId, int fulfilled)
+        {
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
+
+            try
+            {
+                db.Open();
+
+                string sql = "UPDATE BookRequest SET fulfilled = @fulfilled WHERE id = @requestId";
+                SqlCommand command = new SqlCommand(sql, db);
+                command.Parameters.AddWithValue("@fulfilled", fulfilled);
+                command.Parameters.AddWithValue("@requestId", requestId);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return true;
+        }
+
+        public static bool DeleteRequest(int requestId)
+        {
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
+
+            try
+            {
+                db.Open();
+
+                string sql = "DELETE FROM BookRequest WHERE id = @requestId";
+                SqlCommand command = new SqlCommand(sql, db);
+                command.Parameters.AddWithValue("@requestId", requestId);
+                command.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                return false;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return true;
         }
     }
 }

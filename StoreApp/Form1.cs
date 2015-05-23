@@ -22,12 +22,24 @@ namespace StoreApp
 
             storeService = new StoreServClient();
             bookGrid.DataSource = storeService.GetBooks();
+            requestGrid.DataSource = storeService.GetRequests();
         }
 
         private void bookGrid_SelectionChanged(object sender, EventArgs e)
         {
             if(bookGrid.SelectedRows.Count > 0)
                 bookIdField.Text = bookGrid.SelectedRows[0].Cells["id"].Value.ToString();
+        }
+
+        private void orderSubmitBtn_Click(object sender, EventArgs e)
+        {
+            int bookId = Convert.ToInt32(bookIdField.Text);
+            int quantity = Convert.ToInt32(bookQuantityField.Text);
+            string clientName = clientNameField.Text;
+            string clientAddress = clientAddressField.Text;
+            string clientEmail = clientEmailField.Text;
+
+            storeService.AddOrder(bookId, quantity, clientName, clientAddress, clientEmail, 0);
         }
     }
 }

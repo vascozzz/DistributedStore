@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
+using StoreService.PrinterService;
 
 namespace StoreService
 {
@@ -65,11 +66,14 @@ namespace StoreService
             if (origin == 1 && stateCode == 3) {
                 // MailHelper.SendMail(clientEmail, clientName, orderId, date.ToString("d-M-yyyy"));
             }
-            
+
+            //PrinterServClient printerService = new PrinterServClient();
+            //printerService.Print("Pony");
+
             // or issue receipt if origin = store
             if (origin == 0 && stateCode == 2) {
                 // print receipt thingy
-
+                //new PrinterServClient().Print("PonyPonyPonyPonyPonyPonyPonyPonyPonyPonyPonyPony");
             }
 
             return orderId;
@@ -78,6 +82,27 @@ namespace StoreService
         public DataTable CheckOrder(string clientEmail, int orderId)
         {
             return DatabaseLayer.CheckOrder(clientEmail, orderId);
+        }
+
+
+        public bool AddBookQuantity(int bookId, int quantity)
+        {
+            return DatabaseLayer.AddBookQuantity(bookId, quantity);
+        }
+
+        public DataTable GetRequests()
+        {
+            return DatabaseLayer.GetRequests();
+        }
+
+        public bool FulfillRequest(int requestId)
+        {
+            return DatabaseLayer.UpdateRequest(requestId, 1);
+        }
+
+        public bool DeleteRequest(int requestId)
+        {
+            return DatabaseLayer.DeleteRequest(requestId);
         }
     }
 }

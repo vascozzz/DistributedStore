@@ -18,6 +18,18 @@ namespace StoreService
         int AddOrder(int bookId, int quantity, string clientName, string clientAddress, string clientEmail, int origin);
 
         [OperationContract]
+        bool AddBookQuantity(int bookId, int quantity);
+
+        [OperationContract]
         DataTable CheckOrder(string clientEmail, int orderId);
+
+        [OperationContract]
+        DataTable GetRequests();
+
+        [OperationContract]
+        bool FulfillRequest(int requestId);
+
+        [OperationContract]
+        bool DeleteRequest(int requestId);
     }
 }

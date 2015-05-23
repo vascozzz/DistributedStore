@@ -27,11 +27,35 @@ namespace StoreApp.StoreService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/AddOrder", ReplyAction="http://tempuri.org/IStoreServ/AddOrderResponse")]
         System.Threading.Tasks.Task<int> AddOrderAsync(int bookId, int quantity, string clientName, string clientAddress, string clientEmail, int origin);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/AddBookQuantity", ReplyAction="http://tempuri.org/IStoreServ/AddBookQuantityResponse")]
+        bool AddBookQuantity(int bookId, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/AddBookQuantity", ReplyAction="http://tempuri.org/IStoreServ/AddBookQuantityResponse")]
+        System.Threading.Tasks.Task<bool> AddBookQuantityAsync(int bookId, int quantity);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/CheckOrder", ReplyAction="http://tempuri.org/IStoreServ/CheckOrderResponse")]
         System.Data.DataTable CheckOrder(string clientEmail, int orderId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/CheckOrder", ReplyAction="http://tempuri.org/IStoreServ/CheckOrderResponse")]
         System.Threading.Tasks.Task<System.Data.DataTable> CheckOrderAsync(string clientEmail, int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/GetRequests", ReplyAction="http://tempuri.org/IStoreServ/GetRequestsResponse")]
+        System.Data.DataTable GetRequests();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/GetRequests", ReplyAction="http://tempuri.org/IStoreServ/GetRequestsResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> GetRequestsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/FulfillRequest", ReplyAction="http://tempuri.org/IStoreServ/FulfillRequestResponse")]
+        bool FulfillRequest(int requestId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/FulfillRequest", ReplyAction="http://tempuri.org/IStoreServ/FulfillRequestResponse")]
+        System.Threading.Tasks.Task<bool> FulfillRequestAsync(int requestId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/DeleteRequest", ReplyAction="http://tempuri.org/IStoreServ/DeleteRequestResponse")]
+        bool DeleteRequest(int requestId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/DeleteRequest", ReplyAction="http://tempuri.org/IStoreServ/DeleteRequestResponse")]
+        System.Threading.Tasks.Task<bool> DeleteRequestAsync(int requestId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -77,12 +101,44 @@ namespace StoreApp.StoreService {
             return base.Channel.AddOrderAsync(bookId, quantity, clientName, clientAddress, clientEmail, origin);
         }
         
+        public bool AddBookQuantity(int bookId, int quantity) {
+            return base.Channel.AddBookQuantity(bookId, quantity);
+        }
+        
+        public System.Threading.Tasks.Task<bool> AddBookQuantityAsync(int bookId, int quantity) {
+            return base.Channel.AddBookQuantityAsync(bookId, quantity);
+        }
+        
         public System.Data.DataTable CheckOrder(string clientEmail, int orderId) {
             return base.Channel.CheckOrder(clientEmail, orderId);
         }
         
         public System.Threading.Tasks.Task<System.Data.DataTable> CheckOrderAsync(string clientEmail, int orderId) {
             return base.Channel.CheckOrderAsync(clientEmail, orderId);
+        }
+        
+        public System.Data.DataTable GetRequests() {
+            return base.Channel.GetRequests();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> GetRequestsAsync() {
+            return base.Channel.GetRequestsAsync();
+        }
+        
+        public bool FulfillRequest(int requestId) {
+            return base.Channel.FulfillRequest(requestId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> FulfillRequestAsync(int requestId) {
+            return base.Channel.FulfillRequestAsync(requestId);
+        }
+        
+        public bool DeleteRequest(int requestId) {
+            return base.Channel.DeleteRequest(requestId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteRequestAsync(int requestId) {
+            return base.Channel.DeleteRequestAsync(requestId);
         }
     }
 }

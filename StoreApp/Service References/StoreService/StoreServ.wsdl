@@ -19,11 +19,35 @@
   <wsdl:message name="IStoreServ_AddOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="IStoreServ_AddBookQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_AddBookQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookQuantityResponse" />
+  </wsdl:message>
   <wsdl:message name="IStoreServ_CheckOrder_InputMessage">
     <wsdl:part name="parameters" element="tns:CheckOrder" />
   </wsdl:message>
   <wsdl:message name="IStoreServ_CheckOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:CheckOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_GetRequests_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequests" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_GetRequests_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_FulfillRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:FulfillRequest" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_FulfillRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FulfillRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_DeleteRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRequest" />
+  </wsdl:message>
+  <wsdl:message name="IStoreServ_DeleteRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRequestResponse" />
   </wsdl:message>
   <wsdl:portType name="IStoreServ">
     <wsdl:operation name="GetBooks">
@@ -34,9 +58,25 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/AddOrder" message="tns:IStoreServ_AddOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/AddOrderResponse" message="tns:IStoreServ_AddOrder_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddBookQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/AddBookQuantity" message="tns:IStoreServ_AddBookQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/AddBookQuantityResponse" message="tns:IStoreServ_AddBookQuantity_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CheckOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/CheckOrder" message="tns:IStoreServ_CheckOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/CheckOrderResponse" message="tns:IStoreServ_CheckOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRequests">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/GetRequests" message="tns:IStoreServ_GetRequests_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/GetRequestsResponse" message="tns:IStoreServ_GetRequests_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FulfillRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/FulfillRequest" message="tns:IStoreServ_FulfillRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/FulfillRequestResponse" message="tns:IStoreServ_FulfillRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/DeleteRequest" message="tns:IStoreServ_DeleteRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/DeleteRequestResponse" message="tns:IStoreServ_DeleteRequest_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IStoreServ" type="tns:IStoreServ">
@@ -59,8 +99,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddBookQuantity">
+      <soap:operation soapAction="http://tempuri.org/IStoreServ/AddBookQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="CheckOrder">
       <soap:operation soapAction="http://tempuri.org/IStoreServ/CheckOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRequests">
+      <soap:operation soapAction="http://tempuri.org/IStoreServ/GetRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FulfillRequest">
+      <soap:operation soapAction="http://tempuri.org/IStoreServ/FulfillRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRequest">
+      <soap:operation soapAction="http://tempuri.org/IStoreServ/DeleteRequest" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

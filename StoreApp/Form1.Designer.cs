@@ -31,6 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -46,7 +49,11 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.orderSubmitBtn = new MetroFramework.Controls.MetroButton();
             this.bookGrid = new MetroFramework.Controls.MetroGrid();
+            this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
+            this.requestGrid = new MetroFramework.Controls.MetroGrid();
             ((System.ComponentModel.ISupportInitialize)(this.bookGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -194,6 +201,7 @@
             this.orderSubmitBtn.TabIndex = 15;
             this.orderSubmitBtn.Text = "Submit Order";
             this.orderSubmitBtn.UseSelectable = true;
+            this.orderSubmitBtn.Click += new System.EventHandler(this.orderSubmitBtn_Click);
             // 
             // bookGrid
             // 
@@ -241,9 +249,74 @@
             this.bookGrid.TabIndex = 16;
             this.bookGrid.SelectionChanged += new System.EventHandler(this.bookGrid_SelectionChanged);
             // 
+            // metroLabel9
+            // 
+            this.metroLabel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.metroLabel9.Location = new System.Drawing.Point(13, 375);
+            this.metroLabel9.Name = "metroLabel9";
+            this.metroLabel9.Size = new System.Drawing.Size(641, 2);
+            this.metroLabel9.TabIndex = 17;
+            this.metroLabel9.UseCustomBackColor = true;
+            // 
+            // metroLabel10
+            // 
+            this.metroLabel10.AutoSize = true;
+            this.metroLabel10.Location = new System.Drawing.Point(13, 390);
+            this.metroLabel10.Name = "metroLabel10";
+            this.metroLabel10.Size = new System.Drawing.Size(94, 19);
+            this.metroLabel10.TabIndex = 18;
+            this.metroLabel10.Text = "Book Requests";
+            // 
+            // requestGrid
+            // 
+            this.requestGrid.AllowUserToResizeRows = false;
+            this.requestGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.requestGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.requestGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.requestGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.requestGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.requestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.requestGrid.DefaultCellStyle = dataGridViewCellStyle5;
+            this.requestGrid.EnableHeadersVisualStyles = false;
+            this.requestGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.requestGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.requestGrid.Location = new System.Drawing.Point(13, 423);
+            this.requestGrid.MultiSelect = false;
+            this.requestGrid.Name = "requestGrid";
+            this.requestGrid.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.requestGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.requestGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.requestGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.requestGrid.Size = new System.Drawing.Size(641, 199);
+            this.requestGrid.TabIndex = 19;
+            // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(677, 368);
+            this.ClientSize = new System.Drawing.Size(677, 645);
+            this.Controls.Add(this.requestGrid);
+            this.Controls.Add(this.metroLabel10);
+            this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.bookGrid);
             this.Controls.Add(this.orderSubmitBtn);
             this.Controls.Add(this.clientEmailField);
@@ -262,6 +335,7 @@
             this.Name = "Form1";
             this.Resizable = false;
             ((System.ComponentModel.ISupportInitialize)(this.bookGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.requestGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,6 +359,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroButton orderSubmitBtn;
         private MetroFramework.Controls.MetroGrid bookGrid;
+        private MetroFramework.Controls.MetroLabel metroLabel9;
+        private MetroFramework.Controls.MetroLabel metroLabel10;
+        private MetroFramework.Controls.MetroGrid requestGrid;
     }
 }
 

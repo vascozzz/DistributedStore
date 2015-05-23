@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using System.ServiceModel.Description;
 
 namespace StorePrinter
 {
@@ -11,15 +12,24 @@ namespace StorePrinter
     {
         static void Main(string[] args)
         {
-            string address = "http://localhost/PrinterService.svc";
-            BasicHttpBinding binding = new BasicHttpBinding();
+            Uri address = new Uri("http://localhost:1337/Printer");
 
-            ServiceHost host = new ServiceHost(typeof(StorePrinter.PrinterServ));
-            host.AddServiceEndpoint(typeof(IPrinterServ), binding, address);
+            //Create the Service Host
+            ServiceHost host = new ServiceHost(typeof(StorePrinter.PrinterServ), address);
 
+            //Enable metadata publishing
+            ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+            smb.HttpGetEnabled = true;
+            smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+            host.Description.Behaviors.Add(smb);
+
+            //Open the Service Host
             host.Open();
+
+
             Console.WriteLine("Printer now active. Press <Enter> to close.");
             Console.ReadLine();
+
             host.Close();
         }
     }

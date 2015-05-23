@@ -3,3 +3,9 @@ C:\Programming\C#\DistributedStore\StoreService\bin\Debug\StoreService.pdb
 C:\Programming\C#\DistributedStore\StoreService\obj\Debug\StoreService.dll
 C:\Programming\C#\DistributedStore\StoreService\obj\Debug\StoreService.pdb
 C:\Programming\C#\DistributedStore\StoreService\obj\Debug\StoreService.csprojResolveAssemblyReference.cache
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\bin\Debug\StoreService.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\bin\Debug\StoreService.pdb
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\obj\Debug\StoreService.csprojResolveAssemblyReference.cache
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\obj\Debug\StoreService.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\obj\Debug\StoreService.pdb
+D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\bin\Debug\StoreService.dll.config
