@@ -240,6 +240,38 @@ namespace StoreService
         // Requests //
         //////////////
 
+        //Add a new book request
+        public static int AddRequest(int bookId, int quantity)
+        {
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
+            int newId;
+
+            try
+            {
+                db.Open();
+
+                string sql = "INSERT INTO BookRequest(book_id, quantity, fulfilled) VALUES(@bookId, @quantity, @fulfilled); SELECT SCOPE_IDENTITY()";
+
+                SqlCommand command = new SqlCommand(sql, db);
+
+                command.Parameters.AddWithValue("@bookId", bookId);
+                command.Parameters.AddWithValue("@quantity", quantity);
+                command.Parameters.AddWithValue("@fulfilled", 0);
+
+                newId = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (SqlException e)
+            {
+                throw e;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return newId;
+        }
+
         //Fetches all book requests
         public static DataTable GetRequests()
         {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
+using System.Messaging;
 
 namespace StoreService
 {
@@ -51,11 +52,29 @@ namespace StoreService
             // order must be completed later, state = 1, ask warehouse for more
             else
             {
+                int requestQuantity = quantity * 10; //"...for a quantity 10 times the initial order volume."
+
                 stateCode = 1;
                 state = "waiting expedition";
 
-                // request from warehouse
-                // DatabaseLayer.AddRequest();
+                // Request from warehouse. First, send to database.
+                int requestId = DatabaseLayer.AddRequest(bookId, requestQuantity);
+
+                // Then, send to message queue (for real time communication)
+                MessageQueue warehouseQueue;
+
+                if (MessageQueue.Exists(@".\private$\warehouse"))
+                    warehouseQueue = new MessageQueue(@".\private$\warehouse");
+                else
+                    warehouseQueue = MessageQueue.Create(@".\private$\warehouse");
+
+                Message message = new Message();
+
+                message.Formatter = new BinaryMessageFormatter();
+                message.Body = requestId + " " + bookId + " " + requestQuantity;
+                message.Label = "Store Application";
+
+                warehouseQueue.Send(message);
             }
 
             // register order

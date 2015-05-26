@@ -15,7 +15,6 @@ namespace StoreApp
     public partial class Form1 : MetroForm
     {
         StoreServClient storeService;
-        MessageQueue warehouseQueue;
 
         public Form1()
         {
@@ -25,12 +24,6 @@ namespace StoreApp
             storeService = new StoreServClient();
             bookGrid.DataSource = storeService.GetBooks();
             requestGrid.DataSource = storeService.GetRequests();
-
-            //Start warehouse queue
-            if (MessageQueue.Exists(@".\private$\warehouse"))
-                warehouseQueue = new MessageQueue(@".\private$\warehouse");
-            else
-                warehouseQueue = MessageQueue.Create(@".\private$\warehouse");
 
             //"Start" Printer
             Console.WriteLine("|=============================================|");
@@ -59,17 +52,6 @@ namespace StoreApp
             Console.WriteLine("Order of Id " + orderId + " correctly processed.");
             Console.WriteLine("Thank you for your preference.");
             Console.WriteLine("Please consult our website for more details.");
-        }
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            Message message = new Message();
-
-            message.Formatter = new BinaryMessageFormatter();
-            message.Body = "Oh yeahhhhh";
-            message.Label = "Store Application";
-
-            warehouseQueue.Send(message);
         }
     }
 }
