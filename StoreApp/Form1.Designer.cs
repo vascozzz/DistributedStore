@@ -52,6 +52,7 @@
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.requestGrid = new MetroFramework.Controls.MetroGrid();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.bookGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestGrid)).BeginInit();
             this.SuspendLayout();
@@ -311,9 +312,20 @@
             this.requestGrid.Size = new System.Drawing.Size(641, 199);
             this.requestGrid.TabIndex = 19;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(113, 390);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(75, 23);
+            this.metroButton1.TabIndex = 20;
+            this.metroButton1.Text = "Click me!";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(677, 645);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.requestGrid);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroLabel9);
@@ -362,6 +374,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private MetroFramework.Controls.MetroGrid requestGrid;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
 

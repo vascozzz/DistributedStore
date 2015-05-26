@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
-using StoreService.PrinterService;
 
 namespace StoreService
 {
@@ -67,14 +66,7 @@ namespace StoreService
                 // MailHelper.SendMail(clientEmail, clientName, orderId, date.ToString("d-M-yyyy"));
             }
 
-            //PrinterServClient printerService = new PrinterServClient();
-            //printerService.Print("Pony");
-
-            // or issue receipt if origin = store
-            if (origin == 0 && stateCode == 2) {
-                // print receipt thingy
-                //new PrinterServClient().Print("PonyPonyPonyPonyPonyPonyPonyPonyPonyPonyPonyPony");
-            }
+            //Printer is client side now, so no need to verify if origin is client's. Ill leave the "if" statement here anyway: if (origin == 0 && stateCode == 2)
 
             return orderId;
         }

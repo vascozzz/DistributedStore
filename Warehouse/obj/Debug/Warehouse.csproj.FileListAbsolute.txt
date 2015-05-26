@@ -1,0 +1,12 @@
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\bin\Debug\Warehouse.exe.config
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\bin\Debug\Warehouse.exe
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\bin\Debug\Warehouse.pdb
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\bin\Debug\MetroFramework.Design.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\bin\Debug\MetroFramework.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\bin\Debug\MetroFramework.Fonts.dll
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.Form1.resources
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.Properties.Resources.resources
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.csproj.GenerateResource.Cache
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.exe
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.pdb
+D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.csprojResolveAssemblyReference.cache
