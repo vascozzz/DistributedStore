@@ -4,7 +4,8 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:2036/StoreService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:2036/StoreService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:2036/StoreService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/StoreService" />
+      <xsd:import schemaLocation="http://localhost:2036/StoreService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:2036/StoreService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/StoreService" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IStoreServ_GetBooks_InputMessage">
@@ -25,11 +26,11 @@
   <wsdl:message name="IStoreServ_AddBookQuantity_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddBookQuantityResponse" />
   </wsdl:message>
-  <wsdl:message name="IStoreServ_GetOrder_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetOrder" />
+  <wsdl:message name="IStoreServ_CheckOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrder" />
   </wsdl:message>
-  <wsdl:message name="IStoreServ_GetOrder_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  <wsdl:message name="IStoreServ_CheckOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckOrderResponse" />
   </wsdl:message>
   <wsdl:message name="IStoreServ_addRequest_InputMessage">
     <wsdl:part name="parameters" element="tns:addRequest" />
@@ -68,9 +69,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/AddBookQuantity" message="tns:IStoreServ_AddBookQuantity_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/AddBookQuantityResponse" message="tns:IStoreServ_AddBookQuantity_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetOrder">
-      <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/GetOrder" message="tns:IStoreServ_GetOrder_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/GetOrderResponse" message="tns:IStoreServ_GetOrder_OutputMessage" />
+    <wsdl:operation name="CheckOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/CheckOrder" message="tns:IStoreServ_CheckOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStoreServ/CheckOrderResponse" message="tns:IStoreServ_CheckOrder_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="addRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/IStoreServ/addRequest" message="tns:IStoreServ_addRequest_InputMessage" />
@@ -118,8 +119,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetOrder">
-      <soap:operation soapAction="http://tempuri.org/IStoreServ/GetOrder" style="document" />
+    <wsdl:operation name="CheckOrder">
+      <soap:operation soapAction="http://tempuri.org/IStoreServ/CheckOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

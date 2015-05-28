@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Data;
+using System.ComponentModel;
 
 namespace StoreService
 {
@@ -12,7 +13,7 @@ namespace StoreService
     public interface IStoreServ
     {
         [OperationContract]
-        DataTable GetBooks();
+        List<StoreBook> GetBooks();
 
         [OperationContract]
         int AddOrder(int bookId, int quantity, string clientName, string clientAddress, string clientEmail, int origin);
@@ -21,10 +22,13 @@ namespace StoreService
         bool AddBookQuantity(int bookId, int quantity);
 
         [OperationContract]
-        DataTable CheckOrder(string clientEmail, int orderId);
+        StoreOrder GetOrder(string clientEmail, int orderId);
 
         [OperationContract]
-        DataTable GetRequests();
+        int addRequest(int bookId, int quantity);
+
+        [OperationContract]
+        List<StoreRequest> GetRequests();
 
         [OperationContract]
         bool FulfillRequest(int requestId);

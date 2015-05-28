@@ -47,6 +47,9 @@
     <Compile Include="IStoreServ.cs" />
     <Compile Include="MailHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StoreBook.cs" />
+    <Compile Include="StoreOrder.cs" />
+    <Compile Include="StoreRequest.cs" />
     <Compile Include="StoreServ.cs" />
   </ItemGroup>
   <ItemGroup>

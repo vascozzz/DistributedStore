@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
 using System.Messaging;
+using System.ComponentModel;
 
 namespace StoreService
 {
     class StoreServ : IStoreServ
     {
-        public DataTable GetBooks()
+        public List<StoreBook> GetBooks()
         {
             return DatabaseLayer.GetBooks();
         }
@@ -19,18 +20,17 @@ namespace StoreService
         public int AddOrder(int bookId, int quantity, string clientName, string clientAddress, string clientEmail, int origin)
         {
             // get desired book
-            DataTable books = DatabaseLayer.GetBook(bookId);
+            StoreBook book = DatabaseLayer.GetBook(bookId);
 
             // if not found, return new order Id as -1
-            if (books.Rows.Count < 1)
+            if (book == null)
             {
                 return -1;
             }
 
             // otherwise, proceed by checking if book has enough stock
-            DataRow book = books.Rows[0];
-            int available = (int)book["quantity"];
-            double price = (double)book["price"];
+            int available = book.quantity;
+            double price = book.price;
             float totalPrice = (float)(quantity * price);
 
             DateTime date = DateTime.Today;
@@ -57,10 +57,7 @@ namespace StoreService
                 stateCode = 1;
                 state = "waiting expedition";
 
-                // Request from warehouse. First, send to database.
-                int requestId = DatabaseLayer.AddRequest(bookId, requestQuantity);
-
-                // Then, send to message queue (for real time communication)
+                // Request from warehouse.
                 MessageQueue warehouseQueue;
 
                 if (MessageQueue.Exists(@".\private$\warehouse"))
@@ -71,7 +68,7 @@ namespace StoreService
                 Message message = new Message();
 
                 message.Formatter = new BinaryMessageFormatter();
-                message.Body = requestId + " " + bookId + " " + requestQuantity;
+                message.Body = bookId + " " + requestQuantity;
                 message.Label = "Store Application";
 
                 warehouseQueue.Send(message);
@@ -90,9 +87,9 @@ namespace StoreService
             return orderId;
         }
 
-        public DataTable CheckOrder(string clientEmail, int orderId)
+        public StoreOrder GetOrder(string clientEmail, int orderId)
         {
-            return DatabaseLayer.CheckOrder(clientEmail, orderId);
+            return DatabaseLayer.GetOrder(clientEmail, orderId);
         }
 
 
@@ -101,7 +98,12 @@ namespace StoreService
             return DatabaseLayer.AddBookQuantity(bookId, quantity);
         }
 
-        public DataTable GetRequests()
+        public int addRequest(int bookId, int quantity)
+        {
+            return DatabaseLayer.AddRequest(bookId, quantity);
+        }
+
+        public List<StoreRequest> GetRequests()
         {
             return DatabaseLayer.GetRequests();
         }

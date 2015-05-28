@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.ComponentModel;
 
 namespace StoreService
 {
@@ -18,11 +19,43 @@ namespace StoreService
         // Books //
         ///////////
 
-        //Fetches a book by its id
-        public static DataTable GetBook(int bookId)
+        //Adds a new book
+        public static int AddBook(string title, int quantity, float price)
         {
+            int newId;
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
-            DataTable books = new DataTable("Books");
+
+            try
+            {
+                db.Open();
+
+                string sql = "INSERT INTO Book(title, quantity, price) VALUES(@title, @quantity, @price); SELECT SCOPE_IDENTITY()";
+
+                SqlCommand command = new SqlCommand(sql, db);
+
+                command.Parameters.AddWithValue("@title", title);
+                command.Parameters.AddWithValue("@quantity", quantity);
+                command.Parameters.AddWithValue("@price", price);
+
+                newId = Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch (SqlException)
+            {
+                return -1;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return newId;
+        }
+
+        //Fetches a book by its id
+        public static StoreBook GetBook(int bookId)
+        {
+            StoreBook book = null;
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
 
             try
             {
@@ -33,57 +66,33 @@ namespace StoreService
                 SqlCommand command = new SqlCommand(sql, db);
                 command.Parameters.AddWithValue("@bookId", bookId);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(books);
-            }
-            catch (SqlException e)
-            {
-                throw e;
-            }
-            finally
-            {
-                db.Close();
-            }
+                SqlDataReader reader = command.ExecuteReader();
 
-            return books;
-        }
+                reader.Read();
+                
+                int id = Convert.ToInt32(reader["id"]);
+                string title = reader["title"].ToString();
+                int quantity = Convert.ToInt32(reader["quantity"]);
+                float price = Convert.ToSingle(reader["price"]);
 
-        //Adds a new book
-        public static bool AddBook(string title, int quantity, float price)
-        {
-            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
-
-            try
-            {
-                db.Open();
-
-                string sql = "INSERT INTO Book(title, quantity, price) VALUES(@title, @quantity, @price)";
-
-                SqlCommand command = new SqlCommand(sql, db);
-
-                command.Parameters.AddWithValue("@title", title);
-                command.Parameters.AddWithValue("@quantity", quantity);
-                command.Parameters.AddWithValue("@price", price);
-
-                command.ExecuteNonQuery();
+                book = new StoreBook { id = id, title = title, quantity = quantity, price = price };
             }
             catch (SqlException)
             {
-                return false;
             }
             finally
             {
                 db.Close();
             }
 
-            return true;
+            return book;
         }
 
         //Fetches all books
-        public static DataTable GetBooks()
+        public static List<StoreBook> GetBooks()
         {
+            List<StoreBook> books = new List<StoreBook>();
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
-            DataTable books = new DataTable("Books");
 
             try
             {
@@ -92,12 +101,21 @@ namespace StoreService
                 string sql = "SELECT * FROM Book";
 
                 SqlCommand command = new SqlCommand(sql, db);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(books);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["id"]);
+                    string title = reader["title"].ToString();
+                    int quantity = Convert.ToInt32(reader["quantity"]);
+                    float price = Convert.ToSingle(reader["price"]);
+
+                    books.Add(new StoreBook { id = id, title = title, quantity = quantity, price = price });
+                }
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                throw e;
             }
             finally
             {
@@ -168,8 +186,8 @@ namespace StoreService
         //Adds a new Order
         public static int AddOrder(int bookId, int quantity, float totalPrice, string clientName, string clientAddress, string clientEmail, string state, int stateCode, int origin)
         {
-            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
             int newId;
+            SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
 
             try
             {
@@ -193,9 +211,9 @@ namespace StoreService
 
                 newId = Convert.ToInt32(command.ExecuteScalar());
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                throw e;
+                return -1;
             }
             finally
             {
@@ -206,10 +224,10 @@ namespace StoreService
         }
 
         //Fetches an Order by id and client email (for validation purposes)
-        public static DataTable CheckOrder(string clientEmail, int orderId)
+        public static StoreOrder GetOrder(string clientEmail, int orderId)
         {
+            StoreOrder order = null;
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
-            DataTable orders = new DataTable("Orders");
 
             try
             {
@@ -221,19 +239,32 @@ namespace StoreService
                 command.Parameters.AddWithValue("@clientEmail", clientEmail);
                 command.Parameters.AddWithValue("@orderId", orderId);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(orders);
+                SqlDataReader reader = command.ExecuteReader();
+
+                reader.Read();
+
+                int id = Convert.ToInt32(reader["id"]);
+                int book_id = Convert.ToInt32(reader["book_id"]);
+                int quantity = Convert.ToInt32(reader["quantity"]);
+                float total_price = Convert.ToSingle(reader["total_price"]);
+                string client_name = reader["client_name"].ToString();
+                string client_address = reader["client_address"].ToString();
+                string client_email = reader["client_email"].ToString();
+                string state = reader["state"].ToString();
+                int state_code = Convert.ToInt32(reader["state_code"]);
+                int origin = Convert.ToInt32(reader["origin"]);
+
+                order = new StoreOrder { id = id, book_id = book_id, quantity = quantity, total_price = total_price, client_name = client_name, client_address = client_address, client_email = client_email, state = state, state_code = state_code, origin = origin };
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                throw e;
             }
             finally
             {
                 db.Close();
             }
 
-            return orders;
+            return order;
         }
 
         //////////////
@@ -260,9 +291,9 @@ namespace StoreService
 
                 newId = Convert.ToInt32(command.ExecuteScalar());
             }
-            catch (SqlException e)
+            catch (SqlException)
             {
-                throw e;
+                return -1;
             }
             finally
             {
@@ -273,8 +304,10 @@ namespace StoreService
         }
 
         //Fetches all book requests
-        public static DataTable GetRequests()
+        public static List<StoreRequest> GetRequests()
         {
+            List<StoreRequest> list = new List<StoreRequest>();
+
             SqlConnection db = new SqlConnection(ConfigurationManager.ConnectionStrings[DBNAME].ConnectionString);
             DataTable requests = new DataTable("Requests");
 
@@ -285,8 +318,17 @@ namespace StoreService
                 string sql = "SELECT * FROM BookRequest";
 
                 SqlCommand command = new SqlCommand(sql, db);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(requests);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    int id = Convert.ToInt32(reader["id"]);
+                    int book_id = Convert.ToInt32(reader["book_id"]);
+                    int quantity = Convert.ToInt32(reader["quantity"]);
+                    int fulfilled = Convert.ToInt32(reader["fulfilled"]);
+
+                    list.Add(new StoreRequest { id = id, book_id = book_id, quantity = quantity, fulfilled = fulfilled });
+                }
             }
             catch (SqlException e)
             {
@@ -297,7 +339,7 @@ namespace StoreService
                 db.Close();
             }
 
-            return requests;
+            return list;
         }
 
         //Sets field "fulfilled" of this request to 1 (true).

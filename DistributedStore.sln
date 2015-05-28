@@ -34,6 +34,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreApp", "StoreApp\StoreA
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Warehouse", "Warehouse\Warehouse.csproj", "{D502E7CE-9DA2-45DF-98B3-F24935EDA291}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4510DB11-F782-404D-AF91-D2DAAA473690} = {4510DB11-F782-404D-AF91-D2DAAA473690}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
