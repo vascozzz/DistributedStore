@@ -22,11 +22,10 @@
     <MetadataSource Address="http://localhost:2036/StoreService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StoreService2.xsd" MetadataType="Schema" ID="5034cf3d-e559-4287-af14-283930a9d5a5" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd1" />
-    <MetadataFile FileName="StoreService1.xsd" MetadataType="Schema" ID="d73a59dc-1f42-43e3-b674-9bac76c5f1d5" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd0" />
-    <MetadataFile FileName="StoreService.disco" MetadataType="Disco" ID="572dd799-55f7-4468-bffd-5148abe1b201" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?disco" />
-    <MetadataFile FileName="StoreService3.xsd" MetadataType="Schema" ID="9deae7d2-5c3e-472c-b97b-05dfad231457" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd3" />
     <MetadataFile FileName="StoreService.xsd" MetadataType="Schema" ID="59cce7ae-178e-40a1-9807-a0fecf2517b3" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd2" />
+    <MetadataFile FileName="StoreService1.xsd" MetadataType="Schema" ID="d73a59dc-1f42-43e3-b674-9bac76c5f1d5" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd0" />
+    <MetadataFile FileName="StoreService2.xsd" MetadataType="Schema" ID="5034cf3d-e559-4287-af14-283930a9d5a5" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd1" />
+    <MetadataFile FileName="StoreService.disco" MetadataType="Disco" ID="572dd799-55f7-4468-bffd-5148abe1b201" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?disco" />
     <MetadataFile FileName="StoreServ.wsdl" MetadataType="Wsdl" ID="67f4c4fe-0a06-44d9-bb7f-b0efaba358ca" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?wsdl" />
   </Metadata>
   <Extensions>

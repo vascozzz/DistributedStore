@@ -389,8 +389,20 @@ namespace StoreApp.StoreService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="StoreService.IStoreServ")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="StoreService.IStoreServ", CallbackContract=typeof(StoreApp.StoreService.IStoreServCallback))]
     public interface IStoreServ {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/Subscribe", ReplyAction="http://tempuri.org/IStoreServ/SubscribeResponse")]
+        System.Guid Subscribe();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/Subscribe", ReplyAction="http://tempuri.org/IStoreServ/SubscribeResponse")]
+        System.Threading.Tasks.Task<System.Guid> SubscribeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IStoreServ/Unsubscribe")]
+        void Unsubscribe(System.Guid clientId);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IStoreServ/Unsubscribe")]
+        System.Threading.Tasks.Task UnsubscribeAsync(System.Guid clientId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/GetBooks", ReplyAction="http://tempuri.org/IStoreServ/GetBooksResponse")]
         StoreApp.StoreService.StoreBook[] GetBooks();
@@ -442,30 +454,60 @@ namespace StoreApp.StoreService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IStoreServCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/OnAddRequest", ReplyAction="http://tempuri.org/IStoreServ/OnAddRequestResponse")]
+        void OnAddRequest(int id, int book_id, int quantity);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/OnFulfillRequest", ReplyAction="http://tempuri.org/IStoreServ/OnFulfillRequestResponse")]
+        void OnFulfillRequest(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IStoreServ/OnUpdateBookQuantity", ReplyAction="http://tempuri.org/IStoreServ/OnUpdateBookQuantityResponse")]
+        void OnUpdateBookQuantity(int bookId, int newQuantity);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IStoreServChannel : StoreApp.StoreService.IStoreServ, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class StoreServClient : System.ServiceModel.ClientBase<StoreApp.StoreService.IStoreServ>, StoreApp.StoreService.IStoreServ {
+    public partial class StoreServClient : System.ServiceModel.DuplexClientBase<StoreApp.StoreService.IStoreServ>, StoreApp.StoreService.IStoreServ {
         
-        public StoreServClient() {
+        public StoreServClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public StoreServClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public StoreServClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public StoreServClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public StoreServClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public StoreServClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public StoreServClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public StoreServClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public StoreServClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
+        }
+        
+        public System.Guid Subscribe() {
+            return base.Channel.Subscribe();
+        }
+        
+        public System.Threading.Tasks.Task<System.Guid> SubscribeAsync() {
+            return base.Channel.SubscribeAsync();
+        }
+        
+        public void Unsubscribe(System.Guid clientId) {
+            base.Channel.Unsubscribe(clientId);
+        }
+        
+        public System.Threading.Tasks.Task UnsubscribeAsync(System.Guid clientId) {
+            return base.Channel.UnsubscribeAsync(clientId);
         }
         
         public StoreApp.StoreService.StoreBook[] GetBooks() {

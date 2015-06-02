@@ -59,7 +59,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(13, 42);
+            this.metroLabel1.Location = new System.Drawing.Point(26, 63);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(74, 19);
             this.metroLabel1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(14, 108);
+            this.metroLabel2.Location = new System.Drawing.Point(27, 129);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(23, 19);
             this.metroLabel2.TabIndex = 1;
@@ -77,7 +77,7 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(14, 137);
+            this.metroLabel3.Location = new System.Drawing.Point(27, 158);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(61, 19);
             this.metroLabel3.TabIndex = 2;
@@ -86,7 +86,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(14, 81);
+            this.metroLabel4.Location = new System.Drawing.Point(27, 102);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(111, 19);
             this.metroLabel4.TabIndex = 3;
@@ -96,7 +96,7 @@
             // 
             this.bookIdField.Enabled = false;
             this.bookIdField.Lines = new string[0];
-            this.bookIdField.Location = new System.Drawing.Point(81, 108);
+            this.bookIdField.Location = new System.Drawing.Point(94, 129);
             this.bookIdField.MaxLength = 32767;
             this.bookIdField.Name = "bookIdField";
             this.bookIdField.PasswordChar = '\0';
@@ -109,7 +109,7 @@
             // bookQuantityField
             // 
             this.bookQuantityField.Lines = new string[0];
-            this.bookQuantityField.Location = new System.Drawing.Point(81, 137);
+            this.bookQuantityField.Location = new System.Drawing.Point(94, 158);
             this.bookQuantityField.MaxLength = 32767;
             this.bookQuantityField.Name = "bookQuantityField";
             this.bookQuantityField.PasswordChar = '\0';
@@ -122,7 +122,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(14, 181);
+            this.metroLabel5.Location = new System.Drawing.Point(27, 202);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(114, 19);
             this.metroLabel5.TabIndex = 8;
@@ -131,7 +131,7 @@
             // clientAddressField
             // 
             this.clientAddressField.Lines = new string[0];
-            this.clientAddressField.Location = new System.Drawing.Point(81, 243);
+            this.clientAddressField.Location = new System.Drawing.Point(94, 264);
             this.clientAddressField.MaxLength = 32767;
             this.clientAddressField.Name = "clientAddressField";
             this.clientAddressField.PasswordChar = '\0';
@@ -144,7 +144,7 @@
             // clientNameField
             // 
             this.clientNameField.Lines = new string[0];
-            this.clientNameField.Location = new System.Drawing.Point(81, 214);
+            this.clientNameField.Location = new System.Drawing.Point(94, 235);
             this.clientNameField.MaxLength = 32767;
             this.clientNameField.Name = "clientNameField";
             this.clientNameField.PasswordChar = '\0';
@@ -157,7 +157,7 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(14, 243);
+            this.metroLabel6.Location = new System.Drawing.Point(27, 264);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(59, 19);
             this.metroLabel6.TabIndex = 10;
@@ -166,7 +166,7 @@
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(14, 214);
+            this.metroLabel7.Location = new System.Drawing.Point(27, 235);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(52, 19);
             this.metroLabel7.TabIndex = 9;
@@ -175,7 +175,7 @@
             // clientEmailField
             // 
             this.clientEmailField.Lines = new string[0];
-            this.clientEmailField.Location = new System.Drawing.Point(81, 272);
+            this.clientEmailField.Location = new System.Drawing.Point(94, 293);
             this.clientEmailField.MaxLength = 32767;
             this.clientEmailField.Name = "clientEmailField";
             this.clientEmailField.PasswordChar = '\0';
@@ -188,7 +188,7 @@
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(14, 272);
+            this.metroLabel8.Location = new System.Drawing.Point(27, 293);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(41, 19);
             this.metroLabel8.TabIndex = 13;
@@ -196,7 +196,7 @@
             // 
             // orderSubmitBtn
             // 
-            this.orderSubmitBtn.Location = new System.Drawing.Point(14, 318);
+            this.orderSubmitBtn.Location = new System.Drawing.Point(27, 339);
             this.orderSubmitBtn.Name = "orderSubmitBtn";
             this.orderSubmitBtn.Size = new System.Drawing.Size(142, 23);
             this.orderSubmitBtn.TabIndex = 15;
@@ -234,7 +234,7 @@
             this.bookGrid.EnableHeadersVisualStyles = false;
             this.bookGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.bookGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.bookGrid.Location = new System.Drawing.Point(208, 42);
+            this.bookGrid.Location = new System.Drawing.Point(221, 63);
             this.bookGrid.MultiSelect = false;
             this.bookGrid.Name = "bookGrid";
             this.bookGrid.ReadOnly = true;
@@ -256,7 +256,7 @@
             // metroLabel9
             // 
             this.metroLabel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.metroLabel9.Location = new System.Drawing.Point(13, 375);
+            this.metroLabel9.Location = new System.Drawing.Point(26, 396);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(641, 2);
             this.metroLabel9.TabIndex = 17;
@@ -265,7 +265,7 @@
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(13, 390);
+            this.metroLabel10.Location = new System.Drawing.Point(26, 411);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(94, 19);
             this.metroLabel10.TabIndex = 18;
@@ -301,7 +301,7 @@
             this.requestGrid.EnableHeadersVisualStyles = false;
             this.requestGrid.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.requestGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.requestGrid.Location = new System.Drawing.Point(13, 423);
+            this.requestGrid.Location = new System.Drawing.Point(26, 444);
             this.requestGrid.MultiSelect = false;
             this.requestGrid.Name = "requestGrid";
             this.requestGrid.ReadOnly = true;
@@ -322,7 +322,7 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(677, 645);
+            this.ClientSize = new System.Drawing.Size(692, 672);
             this.Controls.Add(this.requestGrid);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroLabel9);
@@ -343,6 +343,8 @@
             this.Controls.Add(this.metroLabel1);
             this.Name = "Form1";
             this.Resizable = false;
+            this.Text = "Store";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.bookGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.requestGrid)).EndInit();
             this.ResumeLayout(false);

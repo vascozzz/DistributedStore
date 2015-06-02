@@ -8,4 +8,3 @@ D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\bin\Debug\StoreS
 D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\obj\Debug\StoreService.csprojResolveAssemblyReference.cache
 D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\obj\Debug\StoreService.dll
 D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\obj\Debug\StoreService.pdb
-D:\Domus\Programming\C#\workspace\DistributedStore\StoreService\bin\Debug\StoreService.dll.config

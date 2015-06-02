@@ -7,11 +7,44 @@ using System.Data;
 using System.Diagnostics;
 using System.Messaging;
 using System.ComponentModel;
+using System.ServiceModel;
+using System.Threading;
 
 namespace StoreService
 {
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single, ConcurrencyMode = ConcurrencyMode.Multiple)]
     class StoreServ : IStoreServ
     {
+        private readonly Dictionary<Guid, IStoreCallback> clients = new Dictionary<Guid, IStoreCallback>();
+
+        public Guid Subscribe()
+        {
+            IStoreCallback callback = OperationContext.Current.GetCallbackChannel<IStoreCallback>();
+            
+            Guid clientId = Guid.NewGuid();
+
+            if (callback != null)
+            {
+                lock (clients)
+                {
+                    clients.Add(clientId, callback);
+                }
+            }
+
+            return clientId;
+        }
+
+        public void Unsubscribe(Guid clientId)
+        {
+            lock (clients)
+            {
+                if (clients.ContainsKey(clientId))
+                {
+                    clients.Remove(clientId);
+                }
+            }
+        }
+
         public List<StoreBook> GetBooks()
         {
             return DatabaseLayer.GetBooks();
@@ -46,11 +79,9 @@ namespace StoreService
                 state = "dispatched at " + date.ToString("d-M-yyyy");
 
                 int newQuantity = available - quantity;
-                DatabaseLayer.UpdateBookQuantity(bookId, newQuantity);
+                UpdateBookQuantity(bookId, newQuantity);
             }
-
-            // order must be completed later, state = 1, ask warehouse for more
-            else
+            else // order must be completed later, state = 1, ask warehouse for more
             {
                 int requestQuantity = quantity * 10; //"...for a quantity 10 times the initial order volume."
 
@@ -92,6 +123,39 @@ namespace StoreService
             return DatabaseLayer.GetOrder(clientEmail, orderId);
         }
 
+        public void UpdateBookQuantity(int bookId, int newQuantity)
+        {
+            DatabaseLayer.UpdateBookQuantity(bookId, newQuantity);
+
+            //Broadcast to all clients
+            ThreadPool.QueueUserWorkItem
+            (
+                delegate
+                {
+                    lock (clients)
+                    {
+                        List<Guid> disconnectedClientGuids = new List<Guid>();
+
+                        foreach (KeyValuePair<Guid, IStoreCallback> client in clients)
+                        {
+                            try
+                            {
+                                client.Value.OnUpdateBookQuantity(bookId, newQuantity);
+                            }
+                            catch (Exception)
+                            {
+                                disconnectedClientGuids.Add(client.Key);
+                            }
+
+                        }
+
+                        foreach (Guid clientGuid in disconnectedClientGuids)
+                            clients.Remove(clientGuid);
+                    }
+                }
+            );
+        }
+
 
         public bool AddBookQuantity(int bookId, int quantity)
         {
@@ -100,7 +164,37 @@ namespace StoreService
 
         public int addRequest(int bookId, int quantity)
         {
-            return DatabaseLayer.AddRequest(bookId, quantity);
+            int id = DatabaseLayer.AddRequest(bookId, quantity);
+
+            //Broadcast to all clients
+            ThreadPool.QueueUserWorkItem
+            (
+                delegate
+                {
+                    lock (clients)
+                    {
+                        List<Guid> disconnectedClientGuids = new List<Guid>();
+
+                        foreach (KeyValuePair<Guid, IStoreCallback> client in clients)
+                        {
+                            try
+                            {
+                                client.Value.OnAddRequest(id, bookId, quantity);
+                            }
+                            catch (Exception)
+                            {
+                                disconnectedClientGuids.Add(client.Key);
+                            }
+
+                        }
+
+                        foreach (Guid clientGuid in disconnectedClientGuids)
+                            clients.Remove(clientGuid);
+                    }
+                }
+            );
+
+            return id;
         }
 
         public List<StoreRequest> GetRequests()
@@ -110,7 +204,40 @@ namespace StoreService
 
         public bool FulfillRequest(int requestId)
         {
-            return DatabaseLayer.UpdateRequest(requestId, 1);
+            bool success = DatabaseLayer.UpdateRequest(requestId, 1);
+
+            if(success)
+            {
+                //Broadcast to all clients
+                ThreadPool.QueueUserWorkItem
+                (
+                    delegate
+                    {
+                        lock (clients)
+                        {
+                            List<Guid> disconnectedClientGuids = new List<Guid>();
+
+                            foreach (KeyValuePair<Guid, IStoreCallback> client in clients)
+                            {
+                                try
+                                {
+                                    client.Value.OnFulfillRequest(requestId);
+                                }
+                                catch (Exception)
+                                {
+                                    disconnectedClientGuids.Add(client.Key);
+                                }
+
+                            }
+
+                            foreach (Guid clientGuid in disconnectedClientGuids)
+                                clients.Remove(clientGuid);
+                        }
+                    }
+                );
+            }
+
+            return success;
         }
 
         public bool DeleteRequest(int requestId)

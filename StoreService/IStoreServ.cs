@@ -9,9 +9,15 @@ using System.ComponentModel;
 
 namespace StoreService
 {
-    [ServiceContract]
+    [ServiceContract(CallbackContract = typeof(IStoreCallback))]
     public interface IStoreServ
     {
+        [OperationContract]
+        Guid Subscribe();
+
+        [OperationContract(IsOneWay = true)]
+        void Unsubscribe(Guid clientId);
+
         [OperationContract]
         List<StoreBook> GetBooks();
 

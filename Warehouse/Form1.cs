@@ -11,6 +11,7 @@ using System.Messaging;
 using System.Threading;
 using Warehouse.StoreService;
 using System.Windows.Forms;
+using System.ServiceModel;
 
 namespace Warehouse
 {
@@ -19,14 +20,26 @@ namespace Warehouse
         volatile bool shouldStop;
         MessageQueue myQueue;
         StoreServClient storeService;
+        Guid id;
 
         BindingList<StoreRequest> requestList;
+
+        [CallbackBehavior(UseSynchronizationContext = false)]
+        private class StoreServCallback : IStoreServCallback
+        {
+            public void OnAddRequest(int id, int book_id, int quantity) {}
+
+            public void OnFulfillRequest(int id) {}
+
+            public void OnUpdateBookQuantity(int bookId, int newQuantity) {}
+        }
 
         public Form1()
         {
             InitializeComponent();
 
-            storeService = new StoreServClient();
+            storeService = new StoreServClient(new InstanceContext(new StoreServCallback()));
+            id = storeService.Subscribe();
 
             //Get current requests from database
             requestList = new BindingList<StoreRequest>(storeService.GetRequests().ToList());
@@ -86,6 +99,7 @@ namespace Warehouse
         private void Form1_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
             shouldStop = true;
+            storeService.Unsubscribe(id);
             System.Windows.Forms.Application.Exit();
         }
 
@@ -101,6 +115,11 @@ namespace Warehouse
 
                 if (fulfillSuccess)
                     requestList[e.RowIndex].fulfilled = 1;
+            }
+
+            if(fulfilled == 1)
+            {
+                requestList.RemoveAt(e.RowIndex);
             }
         }
     }

@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/System.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="DataTable" nillable="true">
-    <xs:complexType>
-      <xs:annotation>
-        <xs:appinfo>
-          <ActualType Name="DataTable" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
-        </xs:appinfo>
-      </xs:annotation>
-      <xs:sequence>
-        <xs:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-        <xs:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/StoreService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/StoreService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfStoreBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoreBook" nillable="true" type="tns:StoreBook" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoreBook" nillable="true" type="tns:ArrayOfStoreBook" />
+  <xs:complexType name="StoreBook">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:float" />
+      <xs:element minOccurs="0" name="quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreBook" nillable="true" type="tns:StoreBook" />
+  <xs:complexType name="StoreOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="book_id" type="xs:int" />
+      <xs:element minOccurs="0" name="client_address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="client_email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="client_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="origin" type="xs:int" />
+      <xs:element minOccurs="0" name="quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="state" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="state_code" type="xs:int" />
+      <xs:element minOccurs="0" name="total_price" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreOrder" nillable="true" type="tns:StoreOrder" />
+  <xs:complexType name="ArrayOfStoreRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoreRequest" nillable="true" type="tns:StoreRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoreRequest" nillable="true" type="tns:ArrayOfStoreRequest" />
+  <xs:complexType name="StoreRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="book_id" type="xs:int" />
+      <xs:element minOccurs="0" name="fulfilled" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="quantity" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoreRequest" nillable="true" type="tns:StoreRequest" />
 </xs:schema>

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using MetroFramework.Forms;
 using StoreApp.StoreService;
 using System.Messaging;
+using System.ServiceModel;
+using System.Windows.Forms;
 
 namespace StoreApp
 {
@@ -17,13 +19,15 @@ namespace StoreApp
         StoreServClient storeService;
         BindingList<StoreBook> bookList;
         BindingList<StoreRequest> requestList;
+        Guid id;
 
         public Form1()
         {
             InitializeComponent();
 
             //Start store service
-            storeService = new StoreServClient();
+            storeService = new StoreServClient(new InstanceContext(new StoreServCallback(this)));
+            id = storeService.Subscribe();
 
             //Set book grid
             bookList = new BindingList<StoreBook>(storeService.GetBooks().ToList());
@@ -50,6 +54,8 @@ namespace StoreApp
             Console.WriteLine("- Initializing Printer...");
             Console.WriteLine("- Status: Online");
         }
+
+        //Events
 
         private void bookGrid_SelectionChanged(object sender, EventArgs e)
         {
@@ -89,6 +95,51 @@ namespace StoreApp
 
                 requestList.RemoveAt(e.RowIndex);
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            storeService.Unsubscribe(id);
+        }
+
+        // Form manipulation
+
+        public void AddRequest(StoreRequest request)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke((MethodInvoker)delegate { AddRequest(request); });
+                return;
+            }
+
+            requestList.Add(request);
+        }
+
+        public void FulfillRequest(int requestId)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke((MethodInvoker)delegate { FulfillRequest(requestId); });
+                return;
+            }
+
+            foreach (StoreRequest request in requestList)
+                if (request.id == requestId)
+                    request.fulfilled = 1;
+        }
+
+
+        internal void UpdateBookQuantity(int bookId, int newQuantity)
+        {
+            if (InvokeRequired)
+            {
+                BeginInvoke((MethodInvoker)delegate { UpdateBookQuantity(bookId, newQuantity); });
+                return;
+            }
+
+            foreach (StoreBook book in bookList)
+                if (book.id == bookId)
+                    book.quantity = newQuantity;
         }
     }
 }
