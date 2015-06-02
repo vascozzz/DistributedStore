@@ -11,9 +11,9 @@ namespace StoreApp
     [CallbackBehavior(UseSynchronizationContext = false)]
     class StoreServCallback : IStoreServCallback
     {
-        private Form1 form;
+        private Main form;
 
-        public StoreServCallback(Form1 form)
+        public StoreServCallback(Main form)
         {
             this.form = form;
         }

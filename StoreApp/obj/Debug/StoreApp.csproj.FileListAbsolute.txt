@@ -10,3 +10,12 @@ D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.P
 D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.csproj.GenerateResource.Cache
 D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.exe
 D:\Domus\Programming\C#\workspace\DistributedStore\StoreApp\obj\Debug\StoreApp.pdb
+C:\Programming\C#\DistributedStore\StoreApp\bin\Debug\StoreApp.exe.config
+C:\Programming\C#\DistributedStore\StoreApp\obj\Debug\StoreApp.exe
+C:\Programming\C#\DistributedStore\StoreApp\obj\Debug\StoreApp.pdb
+C:\Programming\C#\DistributedStore\StoreApp\bin\Debug\StoreApp.exe
+C:\Programming\C#\DistributedStore\StoreApp\bin\Debug\StoreApp.pdb
+C:\Programming\C#\DistributedStore\StoreApp\obj\Debug\StoreApp.csprojResolveAssemblyReference.cache
+C:\Programming\C#\DistributedStore\StoreApp\obj\Debug\StoreApp.Properties.Resources.resources
+C:\Programming\C#\DistributedStore\StoreApp\obj\Debug\StoreApp.csproj.GenerateResource.Cache
+C:\Programming\C#\DistributedStore\StoreApp\obj\Debug\StoreApp.Main.resources

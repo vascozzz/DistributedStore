@@ -10,3 +10,12 @@ D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse
 D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.exe
 D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.pdb
 D:\Domus\Programming\C#\workspace\DistributedStore\Warehouse\obj\Debug\Warehouse.csprojResolveAssemblyReference.cache
+C:\Programming\C#\DistributedStore\Warehouse\bin\Debug\Warehouse.exe.config
+C:\Programming\C#\DistributedStore\Warehouse\obj\Debug\Warehouse.exe
+C:\Programming\C#\DistributedStore\Warehouse\obj\Debug\Warehouse.pdb
+C:\Programming\C#\DistributedStore\Warehouse\bin\Debug\Warehouse.exe
+C:\Programming\C#\DistributedStore\Warehouse\bin\Debug\Warehouse.pdb
+C:\Programming\C#\DistributedStore\Warehouse\obj\Debug\Warehouse.csprojResolveAssemblyReference.cache
+C:\Programming\C#\DistributedStore\Warehouse\obj\Debug\Warehouse.Properties.Resources.resources
+C:\Programming\C#\DistributedStore\Warehouse\obj\Debug\Warehouse.csproj.GenerateResource.Cache
+C:\Programming\C#\DistributedStore\Warehouse\obj\Debug\Warehouse.Main.resources

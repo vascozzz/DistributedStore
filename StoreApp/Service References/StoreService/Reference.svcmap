@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1eec1b60-28d1-4f3f-bfbf-b0ca413f22f6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="74c6b30b-9710-4fcb-861f-6d0e6c0fd8e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:2036/StoreService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:12707/StoreService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StoreService.xsd" MetadataType="Schema" ID="3fc499b9-673c-474a-a9ae-b4e89fc5c27b" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd2" />
-    <MetadataFile FileName="StoreService1.xsd" MetadataType="Schema" ID="0ec643ec-47a9-4e46-be1e-2aa398e907ce" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd0" />
-    <MetadataFile FileName="StoreService2.xsd" MetadataType="Schema" ID="9f58a0d6-4b0a-40c5-8f0b-d1fc0befe507" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?xsd=xsd1" />
-    <MetadataFile FileName="StoreService.disco" MetadataType="Disco" ID="fdbc1aa6-5abc-4504-9cd8-15fe58a2f042" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?disco" />
-    <MetadataFile FileName="StoreServ.wsdl" MetadataType="Wsdl" ID="6a454be0-cfab-4003-b9a1-52b45753999a" SourceId="1" SourceUrl="http://localhost:2036/StoreService.svc?wsdl" />
+    <MetadataFile FileName="StoreService.disco" MetadataType="Disco" ID="70e960c4-52af-4438-bf53-1193ef3fad67" SourceId="1" SourceUrl="http://localhost:12707/StoreService.svc?disco" />
+    <MetadataFile FileName="StoreService.xsd" MetadataType="Schema" ID="eb1e7628-84aa-439f-992b-3c64aa3d4a87" SourceId="1" SourceUrl="http://localhost:12707/StoreService.svc?xsd=xsd0" />
+    <MetadataFile FileName="StoreServ.wsdl" MetadataType="Wsdl" ID="c50a4797-cc57-41db-a1fb-1b2d857b23cc" SourceId="1" SourceUrl="http://localhost:12707/StoreService.svc?wsdl" />
+    <MetadataFile FileName="StoreService1.xsd" MetadataType="Schema" ID="aabe8139-eedb-43fc-b005-d378fbf794d1" SourceId="1" SourceUrl="http://localhost:12707/StoreService.svc?xsd=xsd1" />
+    <MetadataFile FileName="StoreService2.xsd" MetadataType="Schema" ID="d0860e59-74f7-4aea-921b-eefe2a8dc6c8" SourceId="1" SourceUrl="http://localhost:12707/StoreService.svc?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

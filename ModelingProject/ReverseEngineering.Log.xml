@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-06-02T17:01:43" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'b3eeb6aa-2ff2-40ac-9bab-29f6ed1d430c' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Boolean' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService' -  (Package)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Medium" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer' -  (Class)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBook' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBook::price' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBook::quantity' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBook::title' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBookQuantity' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBookQuantity::bookId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddBookQuantity::quantity' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::bookId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::clientAddress' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::clientEmail' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::clientName' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::origin' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::quantity' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::state' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::stateCode' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddOrder::totalPrice' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddRequest' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddRequest::bookId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::AddRequest::quantity' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::DBNAME' -  (Property)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::DeleteRequest' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::DeleteRequest::requestId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetBook' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetBook::bookId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetBooks' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetOrder' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetOrder::clientEmail' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetOrder::orderId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::GetRequests' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::UpdateBookQuantity' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::UpdateBookQuantity::bookId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::UpdateBookQuantity::newQuantity' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::UpdateRequest' -  (Operation)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::UpdateRequest::fulfilled' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::DatabaseLayer::UpdateRequest::requestId' -  (Parameter)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::StoreBook' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::StoreOrder' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::StoreService::StoreRequest' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System' -  (Package)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic::List&lt;StoreBook‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Collections::Generic::List&lt;StoreRequest‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ModelingProject::System::Single' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="High" Text="(7) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-06-02T17:01:44" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>

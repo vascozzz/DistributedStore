@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="5807b7a0-47cc-4afc-b456-5122145391aa"
+  name="Forms"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="152561bf-ebbf-4781-91a1-f423be569260"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DMetroFramework.Forms"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="be75008c-8611-4c92-adb8-2f6a2b455444"
+        name="MetroForm"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="b2cce4df-0cfb-492e-ae9e-70d6517db610"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FProgramming%2FC%2523%2FDistributedStore%2FStoreApp%2Fbin%2FDebug%2FMetroFramework.dll Namespace%3DMetroFramework.Forms Type%3DMetroForm"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ddfce532-767e-4d78-9a01-969710ec8421"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="36e74c02-c391-49db-b841-0fe5024697a1">
+                <propertyInstance
+                  Id="57b0ea00-1553-4df7-b1e6-2e1c3b47250b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9ae2ec92-5eeb-4ddd-9f0e-0dbe91048d5b">
+                <propertyInstance
+                  Id="dcbcec19-c521-49bd-b7cb-928652082cd1"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="1b6f3f23-ad00-4afe-86a6-09f04e96ee4d">
+                <propertyInstance
+                  Id="844ea842-3824-4663-b3a5-3021015a0602"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e67c4188-d62d-4e62-bf86-5b263489cd83">
+                <propertyInstance
+                  Id="7eec1053-1210-4b26-912b-c34d5af703d9"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="db9872c7-bb67-4ca9-8224-f9a841c43637">
+                <propertyInstance
+                  Id="ac523ac4-034a-48e6-a569-44ce757f552f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

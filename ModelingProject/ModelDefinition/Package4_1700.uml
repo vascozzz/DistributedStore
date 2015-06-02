@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="1b4c3e51-01e4-4158-89f2-e9f520149293"
+  name="StoreService"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="864326e0-3e09-44a6-ae7b-f29f9a359684"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DStoreApp.StoreService"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="d5b21683-f1c8-4245-87d8-9181d777340c"
+        name="StoreRequest"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="c2fd0f6e-2db8-4eb5-a36e-5180d90adec2"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FProgramming%2FC%2523%2FDistributedStore%2FStoreApp%2Fbin%2FDebug%2FStoreApp.exe Namespace%3DStoreApp.StoreService Type%3DStoreRequest"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="962efdc5-a1ba-47a0-b4e6-91c85e8461c0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bce8d504-06d3-44cb-bf17-7b9cc6cb4896">
+                <propertyInstance
+                  Id="f4ab43b0-0708-4dae-81a3-16ad0c6b34bb"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="50774da2-0d6a-490e-badf-8e32611f6062">
+                <propertyInstance
+                  Id="7fd198c2-8893-44d8-b070-15a594bd5420"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="4138b03a-6cbe-44a6-954a-98f56738a87a">
+                <propertyInstance
+                  Id="00a4e939-9ee1-41d7-b710-53ed1ca0a344"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="eb2f835c-f336-419a-8f46-3ed89b8b49c7">
+                <propertyInstance
+                  Id="5551d3fe-717e-4013-a89f-28cf8b886c01"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="50b42913-3634-4553-bd0a-b6eb8bce4fd8">
+                <propertyInstance
+                  Id="d0501912-c81c-4c02-b344-75deef53c741"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f1dfdf1c-3410-475a-b7d4-18facb2d32d8"
+        name="StoreServClient"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d7bf7ef6-bd13-4efb-af90-07d298b59f6a"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FProgramming%2FC%2523%2FDistributedStore%2FStoreApp%2Fbin%2FDebug%2FStoreApp.exe Namespace%3DStoreApp.StoreService Type%3DStoreServClient"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="8b7604bd-fd23-4a02-94e8-6cbd7432a50a"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e7d1b505-c07f-4efc-be1c-ff6e1b254056">
+                <propertyInstance
+                  Id="9af75330-f6ab-4867-b3b0-fc0f5dd02ff1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="169f5f2c-4ecc-46ad-a1d5-fc5c92b8c9a1">
+                <propertyInstance
+                  Id="37f3e226-7e10-4fdd-b700-945b77eb280a"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="30e331d0-f7e7-49b4-852a-ff5dced0e751">
+                <propertyInstance
+                  Id="5c14dc8d-fc57-466a-a828-5a265375c767"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="248f5db6-3473-4934-8ea0-5845ea616715">
+                <propertyInstance
+                  Id="353b24f1-e75f-4c2a-b6b4-fafe93a092d1"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b076e608-a70e-42b2-9b12-4bcfb3e35c92">
+                <propertyInstance
+                  Id="d5624d94-63da-46bf-b8a0-4648fc21f054"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="7956fb15-4e48-4134-9dff-f8a8ff12637d"
+        name="StoreBook"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="a793e30e-0079-4e72-87c1-637e789da6bd"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FProgramming%2FC%2523%2FDistributedStore%2FStoreApp%2Fbin%2FDebug%2FStoreApp.exe Namespace%3DStoreApp.StoreService Type%3DStoreBook"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3809b3aa-522a-4cf4-a0f8-76ffab4c2469"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="162472ca-5e04-419a-bb3d-425346d3dd90">
+                <propertyInstance
+                  Id="217e848f-47f1-43a0-aefe-d3c352e6d8e9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b543e5cb-7d77-433c-808b-3407beb5c4dd">
+                <propertyInstance
+                  Id="6b6ebdc4-b5ad-45cf-8ba6-7e2a0e316de9"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fe1f475b-ff5f-4755-baf5-0d8a18e0e1f8">
+                <propertyInstance
+                  Id="b2df8380-efc3-47f7-86a9-b555f15e6c52"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9cd0fb1c-ed67-4d4b-a1b6-691717549e23">
+                <propertyInstance
+                  Id="9463ec57-1810-4d75-99e2-4a049b1cd244"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="677214c7-9ab5-47f8-b222-8c9c2616783e">
+                <propertyInstance
+                  Id="114b88cf-472d-41c7-8618-38675d4e25f1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
