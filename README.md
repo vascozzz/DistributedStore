@@ -1,4 +1,4 @@
-# # Distributed Store
+# Distributed Store
 
 Developed for the class of Distribution and Integration Technologies (EIC0077) at MIEIC, FEUP. 
 
@@ -11,12 +11,15 @@ Further info can be found in the [full report](Docs/report.pdf) (Portuguese).
 ## Screenshots
 
 <img src="Docs/screens/webapp_main.png" width="650">
+
 Web application.
 
-<img src="Docs/screens/webapp_main.png" width="650">
+<img src="Docs/screens/storeapp_main.png" width="650">
+
 Store management application (internal use only).
 
-<img src="Docs/screens/webapp_main.png" width="650">
+<img src="Docs/screens/warehouseapp_main.png" width="650">
+
 Warehouse monitoring application.
 
 
